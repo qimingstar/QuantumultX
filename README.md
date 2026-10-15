@@ -12,6 +12,7 @@
 |---|---|
 | Wise | `wise.com`、`transferwise.com` |
 | iFAST Global Bank | `ifastgb.com` |
+| FSM Global（iFAST 集团投资平台） | `fsm.global`、`fundsupermart.com` |
 
 Wise 的 `api.wise.com`、`api-mtls.transferwise.com` 已由上述后缀规则覆盖。
 
@@ -29,11 +30,11 @@ https://raw.githubusercontent.com/qimingstar/QuantumultX/main/rule/QuantumultX/B
 https://raw.githubusercontent.com/qimingstar/QuantumultX/main/rule/QuantumultX/Bank/Bank.list, tag=Bank直连, force-policy=direct, enabled=true
 ```
 
-将这条资源放在可能匹配这些银行服务 的通用代理资源之前，并检查已有本地规则是否抢先匹配。保存配置并更新远程资源，在分流模式下使用。
+将这条资源放在可能匹配这些银行服务的通用代理资源之前，并检查已有本地规则是否抢先匹配。保存配置并更新远程资源，在分流模式下使用。
 
 ### 从旧 Wise 订阅迁移
 
-将手机上原有资源地址中的 `Wise/Wise.list` 改为 `Bank/Bank.list`，名称改为 `Bank直连`，然后更新资源，应加载 3 条规则。旧 Wise 地址保留相同内容以兼容已有订阅；不必同时添加两个资源。
+将手机上原有资源地址中的 `Wise/Wise.list` 改为 `Bank/Bank.list`，名称改为 `Bank直连`，然后更新资源，应加载 5 条规则。旧 Wise 地址保留相同内容以兼容已有订阅；不必同时添加两个资源。
 
 ### 本地添加
 
@@ -43,6 +44,8 @@ https://raw.githubusercontent.com/qimingstar/QuantumultX/main/rule/QuantumultX/B
 host-suffix, wise.com, direct
 host-suffix, transferwise.com, direct
 host-suffix, ifastgb.com, direct
+host-suffix, fsm.global, direct
+host-suffix, fundsupermart.com, direct
 ```
 
 ### 验证
@@ -59,3 +62,6 @@ host-suffix, ifastgb.com, direct
 - [iFAST Global Bank 官网](https://www.ifastgb.com/)：银行官方域名依据。
 
 当前规则面向日常银行访问。Wise 开发测试沙箱不纳入该集合；第三方身份验证、客服等域名根据手机网络活动日志逐项确认后补充。
+
+- [FSM Global 官网](https://fsm.global/)：iFAST 集团归属说明。
+- [iFAST 集团业务页面](https://www.ifastcorp.com/ifastcorp/business/business-divisions.tpl)：FSM Global 与 Fundsupermart 平台依据。

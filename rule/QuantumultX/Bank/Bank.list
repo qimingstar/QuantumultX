@@ -5,3 +5,6 @@ host-suffix, wise.com, direct
 host-suffix, transferwise.com, direct
 # iFAST Global Bank: website and subdomains
 host-suffix, ifastgb.com, direct
+# FSM Global: iFAST Group investment platform
+host-suffix, fsm.global, direct
+host-suffix, fundsupermart.com, direct
