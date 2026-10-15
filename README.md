@@ -13,6 +13,16 @@
 | Wise | `wise.com`、`transferwise.com` |
 | iFAST Global Bank | `ifastgb.com` |
 | FSM Global（iFAST 集团投资平台） | `fsm.global`、`fundsupermart.com` |
+| FSMOne | `fsmone.com` |
+| iFAST Corporation | `ifastcorp.com` |
+| iFAST Global Prestige | `ifastgp.com`、`ifastgp.com.hk` |
+| iFAST Pensions | `ifastpensions.com` |
+| iFAST Global Markets | `ifastgm.com.sg`、`ifastgm.com.hk`、`ifastgm.com.my` |
+| Bondsupermart | `bondsupermart.com` |
+| iFAST Fund Management | `ifastfm.com` |
+| iFAST Global Trust | `ifastglobaltrust.com` |
+| iFAST ePENSION | `ifastepension.com.hk` |
+| iFAST Securities US | `ifastsecurities.com` |
 
 Wise 的 `api.wise.com`、`api-mtls.transferwise.com` 已由上述后缀规则覆盖。
 
@@ -27,14 +37,14 @@ https://raw.githubusercontent.com/qimingstar/QuantumultX/main/rule/QuantumultX/B
 在 Quantumult X 配置的 `[filter_remote]` 区段添加以下一行；已有该区段时直接追加内容：
 
 ```ini
-https://raw.githubusercontent.com/qimingstar/QuantumultX/main/rule/QuantumultX/Bank/Bank.list, tag=Bank直连, force-policy=direct, enabled=true
+https://raw.githubusercontent.com/qimingstar/QuantumultX/main/rule/QuantumultX/Bank/Bank.list, tag=Bank直连, force-policy=direct, update-interval=86400, enabled=true
 ```
 
-将这条资源放在可能匹配这些银行服务的通用代理资源之前，并检查已有本地规则是否抢先匹配。保存配置并更新远程资源，在分流模式下使用。
+将这条资源放在可能匹配这些银行服务的通用代理资源之前，并检查已有本地规则是否抢先匹配。保存配置并更新远程资源，在分流模式下使用。`update-interval=86400` 设置远程资源每天自动同步；首次添加或需要立即获取新规则时手动更新。
 
 ### 从旧 Wise 订阅迁移
 
-将手机上原有资源地址中的 `Wise/Wise.list` 改为 `Bank/Bank.list`，名称改为 `Bank直连`，然后更新资源，应加载 5 条规则。旧 Wise 地址保留相同内容以兼容已有订阅；不必同时添加两个资源。
+将手机上原有资源地址中的 `Wise/Wise.list` 改为 `Bank/Bank.list`，名称改为 `Bank直连`，然后更新资源，应加载 18 条规则。旧 Wise 地址保留相同内容以兼容已有订阅；不必同时添加两个资源。
 
 ### 本地添加
 
@@ -46,6 +56,19 @@ host-suffix, transferwise.com, direct
 host-suffix, ifastgb.com, direct
 host-suffix, fsm.global, direct
 host-suffix, fundsupermart.com, direct
+host-suffix, fsmone.com, direct
+host-suffix, ifastcorp.com, direct
+host-suffix, ifastgp.com, direct
+host-suffix, ifastgp.com.hk, direct
+host-suffix, ifastpensions.com, direct
+host-suffix, ifastgm.com.sg, direct
+host-suffix, ifastgm.com.hk, direct
+host-suffix, ifastgm.com.my, direct
+host-suffix, bondsupermart.com, direct
+host-suffix, ifastfm.com, direct
+host-suffix, ifastglobaltrust.com, direct
+host-suffix, ifastepension.com.hk, direct
+host-suffix, ifastsecurities.com, direct
 ```
 
 ### 验证
@@ -65,3 +88,11 @@ host-suffix, fundsupermart.com, direct
 
 - [FSM Global 官网](https://fsm.global/)：iFAST 集团归属说明。
 - [iFAST 集团业务页面](https://www.ifastcorp.com/ifastcorp/business/business-divisions.tpl)：FSM Global 与 Fundsupermart 平台依据。
+
+## 覆盖范围与维护
+
+当前集合覆盖 Wise 以及已核实的 iFAST 集团金融平台，共 18 条域名后缀规则。集团归属不代表每个域名都是 iFAST GB App 的必需依赖。每条 `host-suffix` 规则包含主域名及所有子域名，无需逐项添加 `api`、`secure`、`static` 等子域名。
+
+第三方共享域名（例如 `ytimg.com`、`zimperium.com`）继续按现有策略处理，必要时根据手机日志中的完整主机名评估。远程资源自动更新会下载本仓库已发布的规则，不会自动发现 App 的新依赖。
+
+FSMOne 域名来源：[官方 2025 年基金报告](https://secure.fundsupermart.com/fsm/annual-report/2025/Fundsupermart_Recommended_Funds_Report_2025.pdf)。其他新增金融平台域名来源为上述 iFAST 集团业务页面。

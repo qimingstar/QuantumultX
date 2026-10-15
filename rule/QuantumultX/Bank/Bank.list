@@ -8,3 +8,28 @@ host-suffix, ifastgb.com, direct
 # FSM Global: iFAST Group investment platform
 host-suffix, fsm.global, direct
 host-suffix, fundsupermart.com, direct
+# Sources: https://www.ifastcorp.com/ifastcorp/business/business-divisions.tpl
+# FSMOne: https://secure.fundsupermart.com/fsm/annual-report/2025/Fundsupermart_Recommended_Funds_Report_2025.pdf
+# FSMOne
+host-suffix, fsmone.com, direct
+# iFAST Corporation
+host-suffix, ifastcorp.com, direct
+# iFAST Global Prestige
+host-suffix, ifastgp.com, direct
+host-suffix, ifastgp.com.hk, direct
+# iFAST Pensions
+host-suffix, ifastpensions.com, direct
+# iFAST Global Markets
+host-suffix, ifastgm.com.sg, direct
+host-suffix, ifastgm.com.hk, direct
+host-suffix, ifastgm.com.my, direct
+# Bondsupermart
+host-suffix, bondsupermart.com, direct
+# iFAST Fund Management
+host-suffix, ifastfm.com, direct
+# iFAST Global Trust
+host-suffix, ifastglobaltrust.com, direct
+# iFAST ePENSION
+host-suffix, ifastepension.com.hk, direct
+# iFAST Securities US
+host-suffix, ifastsecurities.com, direct
