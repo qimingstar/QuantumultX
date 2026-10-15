@@ -1,0 +1,5 @@
+# NAME: Wise
+# POLICY: direct
+# Covers the listed domains and their subdomains.
+host-suffix, wise.com, direct
+host-suffix, transferwise.com, direct
