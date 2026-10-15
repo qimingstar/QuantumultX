@@ -1,5 +1,8 @@
-# NAME: Wise
+# Compatibility copy; preferred subscription: ../Bank/Bank.list
+# NAME: Bank
 # POLICY: direct
-# Covers the listed domains and their subdomains.
+# Wise: production domains (including API subdomains)
 host-suffix, wise.com, direct
 host-suffix, transferwise.com, direct
+# iFAST Global Bank: website and subdomains
+host-suffix, ifastgb.com, direct

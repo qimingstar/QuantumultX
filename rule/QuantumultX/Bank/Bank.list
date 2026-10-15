@@ -1,0 +1,7 @@
+# NAME: Bank
+# POLICY: direct
+# Wise: production domains (including API subdomains)
+host-suffix, wise.com, direct
+host-suffix, transferwise.com, direct
+# iFAST Global Bank: website and subdomains
+host-suffix, ifastgb.com, direct
